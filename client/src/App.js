@@ -11,7 +11,7 @@ import UserFavorites from "./pages/UserFavorites";
 import {useSelector} from "react-redux";
 
 function App() {
-  
+   
   // accessing currentUser from redux store
   const {currentUser} = useSelector((state) => state.user);
 
@@ -22,24 +22,32 @@ function App() {
       <Sidebar  />
       </div>
        <Routes>
-       <Route
-          path="/"
-          element={
-            currentUser !== null ? <Navigate to="/homepage" /> : <Navigate to="/login" />
-          }
-        />
-         <Route path="/login" element = { 
+  
+         <Route path="/" element = { 
           currentUser ? <Navigate to = "/homepage"/> : 
           <Login />}/>
+        <Route path = "/" element = {<Login />}/>
          <Route path="/register" element = {
          currentUser ? <Navigate to = "/homepage"/> : 
          <Register/>}/>
-         <Route path="/homepage" element = {<Homepage />}/>
-         <Route path="/movies" element = {<Movies />}/>
-         <Route path="/tvshows" element = {<TvShows />}/>
-         <Route path="/movies/:id" element = {<SingleMoviePage />}/>
-         <Route path="/tvshows/:id" element = {<SingleShowsPage />}/>
-         <Route path="/favorites" element = {<UserFavorites/>}/>
+         <Route path="/homepage" element = { 
+          currentUser ? <Homepage /> : <Login />
+         }/>
+         <Route path="/movies"  element = {
+           currentUser ? <Movies /> : <Login />
+         }/>
+         <Route path="/tvshows" element = {
+          currentUser ? <TvShows /> : <Login />
+         }/>
+         <Route path="/movies/:id" element = {
+          currentUser ? <SingleMoviePage /> : <Login />
+         }/>
+         <Route path="/tvshows/:id" element = {
+          currentUser ? <SingleShowsPage /> : <Login />
+         }/>
+         <Route path="/favorites" element = {
+          currentUser ? <UserFavorites/> : <Login />
+         }/>
        </Routes>
     </Router>
     </div>
