@@ -29,6 +29,8 @@ const Homepage = () => {
     );
   });
 
+  console.log(trendingMovies)
+
   // setting recommendedMovies according to the search input user enters
   const recommendedMovies = contentData?.filter((movie) => {
     return (
@@ -51,7 +53,7 @@ const Homepage = () => {
         <div className="flex gap-4 flex-wrap w-full justify-around">
           {trendingMovies?.map((movie) => {
             const title = movie.title;
-            const imgUrl = movie.poster_path;
+            const imgUrl = movie.backdrop_path;
             const date = movie.release_date;
             return (
               <TrendingCards
@@ -79,7 +81,7 @@ const Homepage = () => {
                 movieId={movie.id}
                 name={movie.title}
                 date={movie.release_date}
-                imgUrl={movie.poster_path}
+                imgUrl={movie.backdrop_path}
                 type="movie"
                 link={`/movies/${movie.id}`}
               />
@@ -92,3 +94,4 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
