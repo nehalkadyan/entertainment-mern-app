@@ -25,7 +25,7 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const apiKey = "b11cf309b4861cd41806e2a4c0b43fcd";
-
+  
   // function to fetch movies
   const fetchMovies = async () => {
     dispatch(contentLoadingStart());
@@ -66,7 +66,7 @@ const Login = () => {
       [e.target.id]: e.target.value,
     });
   };
-
+  
   // function for logging user in
   const handleLogin = async (e) => {
     e.preventDefault();
