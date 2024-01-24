@@ -29,7 +29,7 @@ const TvShows = () => {
               movieId={show.id}
               name={show.name}
               date={show.first_air_date}
-              imgUrl={show.poster_path}
+              imgUrl={show.backdrop_path}
               type="show"
               link={`/tvshows/${show.id}`}
             />
