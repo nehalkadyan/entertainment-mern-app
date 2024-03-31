@@ -26,7 +26,7 @@ const Movies = () => {
     {
       movieData?.map((movie) => {
         return (
-          <ContentCard key = {movie.id} movieId = {movie.id} name = {movie.title} date = {movie.release_date} imgUrl = {movie.poster_path} type="movie" link = {`/movies/${movie.id}`}/>
+          <ContentCard key = {movie.id} movieId = {movie.id} name = {movie.title} date = {movie.release_date} imgUrl = {movie.backdrop_path} type="movie" link = {`/movies/${movie.id}`}/>
         )
       })
     }

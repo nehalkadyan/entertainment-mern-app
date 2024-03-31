@@ -9,9 +9,7 @@ const Homepage = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   // acccessing loading from redux store
-  const { loading } = useSelector((state) => state.content);
   // accessing showsData from redux store
-  const { showsData } = useSelector((state) => state.content);
 
   // accessing contentData from redux store
   const { contentData } = useSelector((state) => state.content);
@@ -28,6 +26,8 @@ const Homepage = () => {
       movie.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
   });
+
+  console.log(trendingMovies)
 
   // setting recommendedMovies according to the search input user enters
   const recommendedMovies = contentData?.filter((movie) => {
@@ -51,7 +51,7 @@ const Homepage = () => {
         <div className="flex gap-4 flex-wrap w-full justify-around">
           {trendingMovies?.map((movie) => {
             const title = movie.title;
-            const imgUrl = movie.poster_path;
+            const imgUrl = movie.backdrop_path;
             const date = movie.release_date;
             return (
               <TrendingCards
@@ -79,7 +79,7 @@ const Homepage = () => {
                 movieId={movie.id}
                 name={movie.title}
                 date={movie.release_date}
-                imgUrl={movie.poster_path}
+                imgUrl={movie.backdrop_path}
                 type="movie"
                 link={`/movies/${movie.id}`}
               />

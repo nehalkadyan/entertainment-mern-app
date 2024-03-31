@@ -56,7 +56,7 @@ const Register = () => {
        const data = await res.json();
        setLoading(false)
        // after successful registration, redirect to login page
-       navigate("/login")
+       navigate("/")
 
 
      }catch(err){
@@ -83,7 +83,7 @@ const Register = () => {
             <button className='bg-red-700 text-white rounded border-none p-2'>{loading ? "Loading" : "Create an account"}</button>
            </form>
            <p className='text-center text-white'>Already have an account? 
-            <Link to="/login" className='ml-2 text-red-700 font-medium'>Login</Link>
+            <Link to="/" className='ml-2 text-red-700 font-medium'>Login</Link>
             </p>
             {error && (
               <p>{error}</p>

@@ -10,11 +10,11 @@ const TvShows = () => {
   const handleQueryChange = (query) => {
     setSearchQuery(query);
   };
-
+  
   const showData = showsData?.filter((movie) => {
     return movie.name.toLowerCase().includes(searchQuery.toLowerCase());
   });
-
+  
   return (
     <div className="p-4 w-full flex flex-col items-center">
       <SearchBar onSearchChange={handleQueryChange} placeholder={"tv series"} />
@@ -29,7 +29,7 @@ const TvShows = () => {
               movieId={show.id}
               name={show.name}
               date={show.first_air_date}
-              imgUrl={show.poster_path}
+              imgUrl={show.backdrop_path}
               type="show"
               link={`/tvshows/${show.id}`}
             />

@@ -11,7 +11,7 @@ const ContentCard = ({ movieId, name, date, imgUrl, type, link }) => {
   const year = date.split("-")[0];
   // setting full url for the image
   const fullImgUrl = `https://image.tmdb.org/t/p/w500${imgUrl}`;
-
+  
   const words = name.split(" ");
   const title = words.slice(0, 3).join(" ");
   const displayTitle = words.length > 4 ? `${title}...` : title;

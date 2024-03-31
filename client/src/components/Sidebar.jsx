@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { logoutSuccessful } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
@@ -27,8 +27,9 @@ const Sidebar = () => {
   };
   const [activeMenuItem, setActiveMenuItem] = useState(1);
 
+
   const handleActiveMenuItem = (index) => {
-    setActiveMenuItem(index);
+      setActiveMenuItem(index); 
   };
 
   // Function for logging user out
@@ -40,12 +41,19 @@ const Sidebar = () => {
       if (res.ok) {
         // dispatching the action
         dispatch(logoutSuccessful());
-        navigate("/login");
+        navigate("/");
       }
     } catch (err) {
       console.log(err);
     }
   };
+
+  useEffect(() => {
+    // If currentUser exists, set activeMenuItem to 1
+    if (currentUser) {
+      setActiveMenuItem(1);
+    }
+  }, [currentUser]);
   return (
     <div className="h-[50px] gap-4 md:rounded-lg flex md:w-[80px] w-full md:h-[80vh] bg-slate-800 md:flex-col items-center justify-around md:justify-center py-8 md:py-4 md:gap-12">
       <div className="md:text-5xl text-2xl text-red-800">
