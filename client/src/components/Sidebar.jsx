@@ -36,7 +36,7 @@ const Sidebar = () => {
   const handleUserLogout = async () => {
     try {
       // calling the api endpoint
-      const res = await fetch("http://localhost:5000/api/auth/logout");
+      const res = await fetch("https://entertainment-mern-app-3.onrender.com/api/auth/logout");
       const data = await res.json();
       if (res.ok) {
         // dispatching the action
