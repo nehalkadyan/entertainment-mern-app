@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start" : "node index.js",
-<<<<<<< HEAD
-=======
     "build" : "npm i",
->>>>>>> origin/main
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
