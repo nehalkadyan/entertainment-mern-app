@@ -42,7 +42,7 @@ const Register = () => {
 
      try{
       // making the api call
-       const res = await fetch("http://localhost:5000/api/auth/register", {
+       const res = await fetch("https://entertainment-mern-app-3.onrender.com/api/auth/register", {
          method : "POST",
          headers : {
            "Content-Type" : "application/json"
