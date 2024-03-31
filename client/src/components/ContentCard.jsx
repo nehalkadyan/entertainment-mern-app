@@ -67,3 +67,4 @@ const ContentCard = ({ movieId, name, date, imgUrl, type, link }) => {
 };
 
 export default ContentCard;
+

@@ -11,6 +11,10 @@ import UserFavorites from "./pages/UserFavorites";
 import {useSelector} from "react-redux";
 
 function App() {
+<<<<<<< HEAD
+=======
+   
+>>>>>>> origin/main
   // accessing currentUser from redux store
   const {currentUser} = useSelector((state) => state.user);
 
@@ -20,7 +24,11 @@ function App() {
       <div className={`${currentUser === null ? "hidden" : ""}`}>
         <Sidebar />
       </div>
+<<<<<<< HEAD
     <Routes>
+=======
+       <Routes>
+>>>>>>> origin/main
   
          <Route path="/" element = { 
           currentUser ? <Navigate to = "/homepage"/> : 
